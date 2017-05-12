@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Basic Container Info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Active containers
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            #
+          </ion-col>
+          <ion-col>Name</ion-col>
+          <ion-col>Server</ion-col>
+          <ion-col>Uptime</ion-col>
+          <ion-col>Port</ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let container of containers; let i = index;">
+          <ion-col>
+            {{i+1}}
+          </ion-col>
+          <ion-col>
+            {{container.name}}
+          </ion-col>
+          <ion-col ion-button small color="light">
+            {{container.server}}
+          </ion-col>
+          <ion-col ion-button small color="secondary">
+            {{container.uptime}}
+          </ion-col>
+          <ion-col ion-button small color="light">
+            {{container.address}}
+          </ion-col>
+
+        </ion-row>
+      </ion-item>
+      
+      <ion-card>
+        <ion-card-header>
+          Conteiners by servers
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #barCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -3,21 +3,41 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Server Status</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  <ion-card>
+    <ion-card-header>
+    Europe Nordic and East
+      <!--<button ion-button color="light" small>EUNE</button> <button ion-button color="secondary" small>UP</button>-->
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>Server</ion-col>
+        <ion-col>Status</ion-col>
+        <ion-col>CPU</ion-col>
+        <ion-col>RAM</ion-col>
+        <ion-col>HDD</ion-col>
+        <ion-col>Bandwidth</ion-col>
+
+      </ion-row>
+      <ion-row>
+        <ion-col ion-button small color="light">EUNE</ion-col>
+        <ion-col ion-button small color="secondary">On</ion-col>
+        <ion-col ion-button small color="light">70%</ion-col>
+        <ion-col ion-button small color="light">42%</ion-col>
+        <ion-col ion-button small color="light">2TB</ion-col>
+        <ion-col ion-button small color="danger">1GB/s</ion-col>
+
+      </ion-row>
+      <ion-row>
+        <canvas #lineCanvas></canvas>
+        <canvas #lineCanvas1></canvas>
+        <canvas #lineCanvas2></canvas>
+        
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

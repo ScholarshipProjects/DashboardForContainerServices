@@ -8,11 +8,73 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <ion-card>
+    <ion-card-header>
+      <h1>Select your specs</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Select Service</ion-label>
+          <ion-select [(ngModel)]="services">
+            <ion-option value="wp">WordPress</ion-option>
+            <ion-option value="ghost">Ghost</ion-option>
+            <ion-option value="drupal">Drupal</ion-option>
+            <ion-option value="logstash">Logstash Genesis</ion-option>
+            <ion-option value="alpine">Alpine</ion-option>
+            <ion-option value="elastic">Elastic Search</ion-option>
+            <ion-option value="node">Node</ion-option>
+          </ion-select>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+        </ion-item>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+        <ion-item>
+          <ion-label>Select Cores</ion-label>
+          <ion-select [(ngModel)]="cores">
+            <ion-option value="core1">1 Core</ion-option>
+            <ion-option value="core2">2 Cores</ion-option>
+            <ion-option value="core3">3 Cores</ion-option>
+            <ion-option value="core4">4 Cores</ion-option>
+            <ion-option value="core5">5 Cores</ion-option>
+            <ion-option value="core6">6 Cores</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Select Memory</ion-label>
+          <ion-select [(ngModel)]="ram">
+            <ion-option value="512">512 mb</ion-option>
+            <ion-option value="1024">1024 mb</ion-option>
+            <ion-option value="2048">2048 mb</ion-option>
+            <ion-option value="4096">4096 mb</ion-option>
+            <ion-option value="8192">8192 mb</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Select Disk</ion-label>
+          <ion-select [(ngModel)]="disk">
+            <ion-option value="10">10GB</ion-option>
+            <ion-option value="20">20GB</ion-option>
+            <ion-option value="30">30GB</ion-option>
+            <ion-option value="40">40GB</ion-option>
+            <ion-option value="50">50GB</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Server</ion-label>
+          <ion-select [(ngModel)]="server">
+            <ion-option value="eune">EUNE</ion-option>
+            <ion-option value="euw">Eu West</ion-option>
+            <ion-option value="ru">Russia</ion-option>
+            <ion-option value="cn">China</ion-option>
+            <ion-option value="kr">Korea</ion-option>
+            <ion-option value="jp">Japan</ion-option>            
+          </ion-select>
+        </ion-item>
+        <button ion-button block>Deploy the container</button>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
